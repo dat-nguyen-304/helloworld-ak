@@ -1,0 +1,54 @@
+{
+  "auxiliary scripts": null,
+  "certificates": null,
+  "collateral inputs": [],
+  "currentTreasuryValue": null,
+  "era": "Conway",
+  "fee": "168581 Lovelace",
+  "governance actions": [],
+  "inputs": [
+    "4c81261e20d99d91d6342446079125f3d269909a527cbc2ad66bc835e0dcf3d9#1"
+  ],
+  "metadata": null,
+  "mint": null,
+  "outputs": [
+    {
+      "address": "addr_test1wzs38w89apwszgeadhdx0tln3apmjh2pvvvgqv3kahjegycndwet3",
+      "address era": "Shelley",
+      "amount": {
+        "lovelace": 1000000
+      },
+      "datum": "3f12293ce7d47bb08172a21950f089064f575a4d791b527ba645b653c763a610",
+      "network": "Testnet",
+      "payment credential script hash": "a113b8e5e85d01233d6dda67aff38f43b95d416318803236ede59413",
+      "reference script": null,
+      "stake reference": null
+    },
+    {
+      "address": "addr_test1qqpzrz97zpk58mehp0uagwlhken2f2kkgcresvdtwml33lmjsghezadr5gwlhrwg9cr43t9mdlhqvc30wp6zdu87zqusmfpa0p",
+      "address era": "Shelley",
+      "amount": {
+        "lovelace": 1173549621
+      },
+      "network": "Testnet",
+      "payment credential key hash": "022188be106d43ef370bf9d43bf7b666a4aad646079831ab76ff18ff",
+      "reference script": null,
+      "stake reference": {
+        "stake credential key hash": "72822f9175a3a21dfb8dc82e0758acbb6fee06622f707426f0fe1039"
+      }
+    }
+  ],
+  "redeemers": [],
+  "reference inputs": [],
+  "required signers (payment key hashes needed for scripts)": null,
+  "return collateral": null,
+  "total collateral": null,
+  "treasuryDonation": 0,
+  "update proposal": null,
+  "validity range": {
+    "lower bound": null,
+    "upper bound": null
+  },
+  "voters": {},
+  "withdrawals": null
+}

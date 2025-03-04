@@ -1,0 +1,49 @@
+{
+  "vkeys": [
+    {
+      "vkey": "ed25519_pk1cr4j0et862dlw6d05fwaqsnhqu488u59zhfhemwqdkeweve5c9qsp5kqex",
+      "signature": "84b642a8c0c1921d1e71682ed8010d8c93cb1129b75312015f68f8b3089e8820d7c46f939dff0d49e9556adb083b88fa382ff5bdb17ab96b9a2b5aa2923e5203"
+    }
+  ],
+
+  "vkeys": [
+    {
+      "vkey": "ed25519_pk1cr4j0et862dlw6d05fwaqsnhqu488u59zhfhemwqdkeweve5c9qsp5kqex",
+      "signature": "835a7137352dcf3155288cfc227974d8ec535d2cde9ca0363e4dc6e24e349fa7fa4a7102fdf5a47938f81056d8761497fc62f5a7537325898b36802b2e4f740e"
+    }
+  ],
+
+  "plutus_data": {
+    "elems": [
+      {
+        "constructor": 0,
+        "fields": [
+          {
+            "bytes": "022188be106d43ef370bf9d43bf7b666a4aad646079831ab76ff18ff"
+          }
+        ]
+      }
+    ],
+    "definite_encoding": false
+  },
+  "plutus_scripts": [
+    "59010801010032323232323225333002323232323253330073370e900118041baa0011323322533300a3370e900018059baa00513232533300f30110021533300c3370e900018069baa003132533300d3371e6eb8c044c03cdd50042450f506c6561736520636861792064692100100114a06644646600200200644a66602600229404cc894ccc048cdc78010028a51133004004001375c6028002602a0026eb0c040c044c044c044c044c044c044c044c044c038dd50041bae3010300e37546020601c6ea800c5858dd7180780098061baa00516300c001300c300d001300937540022c6014601600660120046010004601000260086ea8004526136565734aae7555cf2ab9f5742ae881"
+  ],
+  "vkeys": [
+    {
+      "vkey": "ed25519_pk1cr4j0et862dlw6d05fwaqsnhqu488u59zhfhemwqdkeweve5c9qsp5kqex",
+      "signature": "35d2186f93b6b39e0aa95ded8b610e97e32a0c58b3baaefba0217828bf78e85ac3f60de8f2ecf9439eb46d759a55d1d31a11f409ee7731a3bc89e51b6f21e107"
+    }
+  ],
+  "redeemers": [
+    {
+      "data": "d8799f4f506c65617365206368617920646921ff",
+      "ex_units": {
+        "mem": "7000000",
+        "steps": "3000000000"
+      },
+      "index": "1",
+      "tag": "Spend"
+    }
+  ]
+}

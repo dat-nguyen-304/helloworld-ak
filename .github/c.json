@@ -1,0 +1,68 @@
+{
+  "auxiliary scripts": null,
+  "certificates": null,
+  "collateral inputs": [],
+  "currentTreasuryValue": null,
+  "era": "Conway",
+  "fee": "171705 Lovelace",
+  "governance actions": [],
+  "inputs": [
+    "cd78351d706fca5cb9198ded20d27260721d6976edc2a72f61d2233b0dded37b#1"
+  ],
+  "metadata": null,
+  "mint": null,
+  "outputs": [
+    {
+      "address": "addr_test1qpnsm3hpy0syc2n4lg4qskfn3ru5g87mw9n024y8fxxju0s8gkm7g90pw4l5edvw8ny96ykpqyrcy9z5dzqv4es4r2as9alxga",
+      "address era": "Shelley",
+      "amount": {
+        "lovelace": 1000000
+      },
+      "network": "Testnet",
+      "payment credential key hash": "670dc6e123e04c2a75fa2a08593388f9441fdb7166f55487498d2e3e",
+      "reference script": null,
+      "stake reference": {
+        "stake credential key hash": "0745b7e415e1757f4cb58e3cc85d12c101078214546880cae6151abb"
+      }
+    },
+    {
+      "address": "addr_test1qqpzrz97zpk58mehp0uagwlhken2f2kkgcresvdtwml33lmjsghezadr5gwlhrwg9cr43t9mdlhqvc30wp6zdu87zqusmfpa0p",
+      "address era": "Shelley",
+      "amount": {
+        "lovelace": 9992659538
+      },
+      "network": "Testnet",
+      "payment credential key hash": "022188be106d43ef370bf9d43bf7b666a4aad646079831ab76ff18ff",
+      "reference script": null,
+      "stake reference": {
+        "stake credential key hash": "72822f9175a3a21dfb8dc82e0758acbb6fee06622f707426f0fe1039"
+      }
+    },
+    {
+      "address": "addr_test1qqpzrz97zpk58mehp0uagwlhken2f2kkgcresvdtwml33lmjsghezadr5gwlhrwg9cr43t9mdlhqvc30wp6zdu87zqusmfpa0p",
+      "address era": "Shelley",
+      "amount": {
+        "lovelace": 5000000
+      },
+      "network": "Testnet",
+      "payment credential key hash": "022188be106d43ef370bf9d43bf7b666a4aad646079831ab76ff18ff",
+      "reference script": null,
+      "stake reference": {
+        "stake credential key hash": "72822f9175a3a21dfb8dc82e0758acbb6fee06622f707426f0fe1039"
+      }
+    }
+  ],
+  "redeemers": [],
+  "reference inputs": [],
+  "required signers (payment key hashes needed for scripts)": null,
+  "return collateral": null,
+  "total collateral": null,
+  "treasuryDonation": 0,
+  "update proposal": null,
+  "validity range": {
+    "lower bound": 0,
+    "upper bound": 69418086
+  },
+  "voters": {},
+  "withdrawals": null
+}
