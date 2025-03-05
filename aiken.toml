@@ -15,4 +15,9 @@ name = "aiken-lang/stdlib"
 version = "v2.2.0"
 source = "github"
 
+[[dependencies]]
+name = "danogo2023/daken"
+version = "v2.2.1"
+source = "github"
+
 [config]

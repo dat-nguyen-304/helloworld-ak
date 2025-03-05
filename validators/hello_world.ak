@@ -3,12 +3,11 @@ use aiken/collection/list
 // use aiken/primitive/string
 use cardano/transaction.{OutputReference, Transaction, Input, Output, NoDatum}
 use aiken/math
-use cardano/assets.{flatten, zero, add, PolicyId, AssetName}
+use cardano/assets.{ PolicyId, AssetName}
 use cardano/address
 
 fn is_square(n: Int) -> Bool {
-    let res = math.sqrt(n)
-    when res is {
+    when math.sqrt(n) is {
       Some(r) -> r * r == n
       None -> False
     }
@@ -34,9 +33,8 @@ validator hello_world {
     self: Transaction
   ) {
     list.any(
-      flatten(self.mint),
-      fn(asset) {
-        let (_policy_id, _asset_name, asset_amount) = asset
+      assets.flatten(self.mint),
+      fn((_policy_id, _asset_name, asset_amount)) {
         asset_amount > 0
       }
     )
@@ -53,14 +51,15 @@ validator treasure_chest(token_policy: PolicyId, token_name: AssetName) {
   ) {
     list.any(
       self.inputs,
-      fn(input) {
-        list.any(
-          flatten(input.output.value),
-          fn(asset) {
-            let (policy_id, asset_name, _asset_amount) = asset
-            policy_id == token_policy && asset_name == token_name
-          }
-        )
+      fn(Input { output: Output { value, .. }, .. }) {
+        // list.any(
+        //   flatten(value),
+        //   fn(asset) {
+        //     let (policy_id, asset_name, _asset_amount) = asset
+        //     policy_id == token_policy && asset_name == token_name
+        //   }
+        // )
+        assets.quantity_of(value, token_policy, token_name) > 0
       }
     )
   }
@@ -78,7 +77,6 @@ test hello_world_1_1() {
 }
 
 test hello_world_1_2() {
- 
   hello_world.spend(
     Some(21),
     [],
@@ -88,7 +86,6 @@ test hello_world_1_2() {
 }
 
 test fail_hello_world_1_3() fail {
- 
   hello_world.spend(
     Some(20),
     [],
@@ -97,11 +94,20 @@ test fail_hello_world_1_3() fail {
   )
 }
 
+test fail_hello_world_1_4() fail {
+  hello_world.spend(
+    None,
+    [],
+    placeholder_out_ref,
+    transaction.placeholder
+  )
+}
+
 test hello_world_2_1() {
   let assets =
-    zero
-      |> add("pid", "tk1", 1)
-      |> add("bid", "tk2", -2)
+    assets.zero
+      |> assets.add("pid", "tk1", 1)
+      |> assets.add("bid", "tk2", -2)
   hello_world.mint(
     [],
     placeholder_out_ref,
@@ -111,9 +117,9 @@ test hello_world_2_1() {
 
 test fail_hello_world_2_2() fail {
   let assets =
-    zero
-      |> add("pid", "tk1", -1)
-      |> add("pid", "tk2", -2)
+    assets.zero
+      |> assets.add("pid", "tk1", -1)
+      |> assets.add("pid", "tk2", -2)
   hello_world.mint(
     [],
     placeholder_out_ref,
@@ -126,7 +132,7 @@ const placeholder_input =
     output_reference: placeholder_out_ref,
     output: Output {
       address: address.from_verification_key(#"00000000000000000000000000000000000000000000000000000000"),
-      value: zero,
+      value: assets.zero,
       datum: NoDatum,
       reference_script: None,
     }
@@ -137,9 +143,9 @@ test treasure_chest() {
     ..placeholder_input,
     output: Output {
       ..placeholder_input.output,
-      value: zero
-      |> add("pid", "boo", 2)
-      |> add("pid", "foo", 1)
+      value: assets.zero
+      |> assets.add("pid", "boo", 2)
+      |> assets.add("pid", "foo", 1)
     }
   }
     
@@ -161,9 +167,9 @@ test fail_treasure_chest() fail {
     ..placeholder_input,
     output: Output {
       ..placeholder_input.output,
-      value: zero
-      |> add("pid", "boo", 2)
-      |> add("pid", "foo", 1)
+      value: assets.zero
+      |> assets.add("pid", "boo", 2)
+      |> assets.add("pid", "foo", 1)
     }
   }
     
